@@ -1,6 +1,6 @@
 const express = require("express");
-const { getEdges } = require("../db/edges");
-const { getNodes } = require("../db/nodes");
+const { getEdges } = require("../../db/edges");
+const { getNodes } = require("../../db/nodes");
 
 const router = express.Router();
 

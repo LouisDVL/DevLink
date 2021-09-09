@@ -24,7 +24,6 @@ function Cytoscape(props) {
   function setElements() {
     if (nodes.length != 0) {
       return nodes.map((elem) => {
-        console.log(elem);
         return {
           data: {
             ...elem,
@@ -35,21 +34,25 @@ function Cytoscape(props) {
     return;
   }
 
-  console.log(nodes);
-
   let elements = setElements();
-  console.log(elements);
   return (
     <>
       {waiting ? (
-        <h1>Loading</h1>
+        <div className="spinner"></div>
       ) : (
-        <CytoscapeComponent
-          stylesheet={stylesheet}
-          elements={elements}
-          style={{ width: "600px", height: "600px" }}
-          layout={layout}
-        />
+        <div className="container">
+          <CytoscapeComponent
+            stylesheet={stylesheet}
+            elements={elements}
+            style={{ width: "600px", height: "600px" }}
+            layout={layout}
+            cy={(cy) => {
+              cy.on("click", "node", (event) => {
+                console.log(event.target._private.data.id);
+              });
+            }}
+          />
+        </div>
       )}
     </>
   );
