@@ -1,20 +1,24 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunkMiddleware from "redux-thunk";
 
-import reducers from './reducers'
-import App from './components/App'
+import reducers from "./reducers";
+import App from "./components/App";
 
-const store = createStore(reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+const composeEnchancers =
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  composeEnchancers(applyMiddleware(thunkMiddleware))
+);
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   render(
     <Provider store={store}>
       <App />
     </Provider>,
-    document.getElementById('app')
-  )
-})
+    document.getElementById("app")
+  );
+});
