@@ -1,9 +1,9 @@
-const connection = require("./connections");
+const connection = require('./connections')
 
 module.exports = {
-  getEdges,
-};
+  getEdges
+}
 
-function getEdges(db = connection) {
-  return db("edges").select();
+function getEdges (db = connection) {
+  return db('edges').select()
 }

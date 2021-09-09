@@ -1,7 +1,7 @@
-const connection = require("./connections");
+const connection = require('./connections')
 
-module.exports = { getNodes };
+module.exports = { getNodes }
 
-function getNodes(db = connection) {
-  return db("nodes").select();
+function getNodes (db = connection) {
+  return db('nodes').select()
 }

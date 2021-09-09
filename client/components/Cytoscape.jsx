@@ -1,40 +1,39 @@
-import CytoscapeComponent from "react-cytoscapejs";
-import React, { useEffect } from "react";
-import { getAll } from "../api/nodes";
-import { connect } from "react-redux";
-import { getAllNodes } from "../actions/nodes";
+import CytoscapeComponent from 'react-cytoscapejs'
+import React, { useEffect } from 'react'
+import { getAll } from '../api/nodes'
+import { connect } from 'react-redux'
+import { getAllNodes } from '../actions/nodes'
 
-function Cytoscape(props) {
-  const layout = { name: "random" };
-  const { nodes, dispatch, waiting } = props;
+function Cytoscape (props) {
+  const layout = { name: 'random' }
+  const { nodes, dispatch, waiting } = props
 
   useEffect(() => {
-    dispatch(getAllNodes());
-  }, []);
+    dispatch(getAllNodes())
+  }, [])
 
   const stylesheet = [
     {
-      selector: "node",
+      selector: 'node',
       style: {
-        label: "data(label)",
-      },
-    },
-  ];
+        label: 'data(label)'
+      }
+    }
+  ]
 
-  function setElements() {
-    if (nodes.length != 0) {
+  function setElements () {
+    if (nodes.length !== 0) {
       return nodes.map((elem) => {
         return {
           data: {
-            ...elem,
-          },
-        };
-      });
+            ...elem
+          }
+        }
+      })
     }
-    return;
   }
 
-  let elements = setElements();
+  const elements = setElements()
   return (
     <>
       {waiting ? (
@@ -44,25 +43,25 @@ function Cytoscape(props) {
           <CytoscapeComponent
             stylesheet={stylesheet}
             elements={elements}
-            style={{ width: "600px", height: "600px" }}
+            style={{ width: '100vw', height: '100vh' }}
             layout={layout}
             cy={(cy) => {
-              cy.on("click", "node", (event) => {
-                console.log(event.target._private.data.id);
-              });
+              cy.on('click', 'node', (event) => {
+                console.log(event.target._private.data.id)
+              })
             }}
           />
         </div>
       )}
     </>
-  );
+  )
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     nodes: state.nodes,
-    waiting: state.waiting,
-  };
+    waiting: state.waiting
+  }
 }
 
-export default connect(mapStateToProps)(Cytoscape);
+export default connect(mapStateToProps)(Cytoscape)

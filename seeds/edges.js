@@ -1,10 +1,10 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex("edges")
+  return knex('edges')
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex("edges").insert([
+      return knex('edges').insert([
         { id: 1001, source: 1, target: 8 },
         { id: 1002, source: 1, target: 7 },
         { id: 1003, source: 2, target: 6 },
@@ -15,7 +15,7 @@ exports.seed = function (knex) {
         { id: 1008, source: 3, target: 9 },
         { id: 1009, source: 4, target: 5 },
         { id: 1010, source: 4, target: 7 },
-        { id: 1011, source: 4, target: 9 },
-      ]);
-    });
-};
+        { id: 1011, source: 4, target: 9 }
+      ])
+    })
+}
