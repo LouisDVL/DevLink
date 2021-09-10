@@ -19,6 +19,31 @@ function Cytoscape(props) {
       selector: "node",
       style: {
         label: "data(label)",
+        width: "80px",
+        height: "80px",
+        borderWidth: "3px",
+        borderColor: "#FF6700",
+      },
+    },
+    {
+      selector: "#5, #6, #7, #8, #9",
+      style: {
+        backgroundColor: "#EBEBEB",
+        label: "data(label)",
+        rectangle: "true",
+        shape: "rectangle",
+        width: "120px",
+        height: "30px",
+        borderWidth: "3px",
+        borderColor: "#FF6700",
+        textHalign: "center",
+        textValign: "center",
+      },
+    },
+    {
+      selector: "edge-line",
+      style: {
+        lineColor: "#FF6700",
       },
     },
   ];
@@ -46,7 +71,7 @@ function Cytoscape(props) {
           <CytoscapeComponent
             stylesheet={stylesheet}
             elements={elements}
-            style={{ width: "600px", height: "600px" }}
+            style={{ width: "100vw", height: "100vh" }}
             layout={layout}
             cy={(cy) => {
               cy.on("click", "node", (event) => {
