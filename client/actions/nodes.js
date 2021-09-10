@@ -16,12 +16,13 @@ export function getAllNodes() {
   };
 }
 
-export function sendInterestNode(nodeId, interestLabel) {
+export function sendInterestNode(nodeId, interestLabel, history) {
   return (dispatch) => {
     dispatch(waitingPending());
     postInterest(nodeId, interestLabel)
       .then(() => {
         dispatch(waitingFinished());
+        history.push("/");
       })
       .catch((err) => {
         dispatch(waitingFinished());

@@ -1,3 +1,6 @@
+body {
+  font-family: "Urbanist", sans-serif;
+}
 .dot {
   width: 2rem;
   height: 2rem;
@@ -9,6 +12,13 @@ button {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+}
+
+.submitButton {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  width: 100%;
+  font-family: "Urbanist", sans-serif;
 }
 
 .container {
@@ -27,6 +37,9 @@ button {
 input {
   width: 100%;
   margin-top: 2rem;
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: "Urbanist", sans-serif;
 }
 
 .spinner {
