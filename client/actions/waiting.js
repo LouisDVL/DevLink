@@ -1,14 +1,14 @@
-export const WAITING_TRUE = "WAITING_TRUE";
-export const WAITING_FALSE = "WAITING_FALSE";
+export const WAITING_TRUE = 'WAITING_TRUE'
+export const WAITING_FALSE = 'WAITING_FALSE'
 
-export function waitingPending() {
+export function waitingPending () {
   return {
-    type: WAITING_TRUE,
-  };
+    type: WAITING_TRUE
+  }
 }
 
-export function waitingFinished() {
+export function waitingFinished () {
   return {
-    type: WAITING_FALSE,
-  };
+    type: WAITING_FALSE
+  }
 }
