@@ -26,10 +26,10 @@ function AddInterest (props) {
     dispatch(sendInterestNode(nodeId, interest, history))
   }
 
-  function handleDelete (e) {
-    e.preventDefault()
-    dispatch(removeInterestNode(nodeId, history))
-  }
+  // function handleDelete (e) {
+  //   e.preventDefault()
+  //   dispatch(removeInterestNode(nodeId, history))
+  // }
 
   const options = setInterestOptions()
   const person = getPerson()[0]
@@ -41,7 +41,7 @@ function AddInterest (props) {
         <div className="container">
           <div className="content">
             <label className="label">
-              Choose an interest for <br/> {person.label} from this list:{" "}
+              Choose an interest for <br/> {person.label} from this list:{' '}
             </label>
             <br />
             <input
@@ -56,9 +56,9 @@ function AddInterest (props) {
             <button className="submitButton" onClick={(e) => handleSubmit(e)}>
               Submit
             </button>
-            <button className="submitButton" onClick={(e) => handleDelete(e)}>
+            {/* <button className="submitButton" onClick={(e) => handleDelete(e)}>
               Delete
-            </button>
+            </button> */}
           </div>
         </div>
       )}

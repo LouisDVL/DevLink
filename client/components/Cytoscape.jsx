@@ -366,6 +366,7 @@ function Cytoscape (props) {
         <div className="spinner"></div>
       ) : (
         <div className="container">
+          <div style={{ fontSize: '40px', position: 'absolute', left: '10px', top: '10px' }}> Dev-Link: Connecting us by the things we love </div>
           <CytoscapeComponent
             stylesheet={stylesheet}
             elements={elements}
