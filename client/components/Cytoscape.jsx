@@ -16,13 +16,15 @@ function Cytoscape(props) {
 
   const stylesheet = [
     {
-      selector: "node",
+      selector: "#1",
       style: {
         label: "data(label)",
         width: "80px",
         height: "80px",
         borderWidth: "3px",
         borderColor: "#FF6700",
+        backgroundImage: "https://avatars.githubusercontent.com/u/62978181?s=64&v=4",
+        backgroundFit: "cover",
       },
     },
     {

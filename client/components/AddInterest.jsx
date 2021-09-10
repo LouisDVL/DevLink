@@ -35,8 +35,8 @@ function AddInterest(props) {
       ) : (
         <div className="container">
           <div className="content">
-            <label>
-              Choose an interest for {person.label} from this list:{" "}
+            <label className="label">
+              Choose an interest for <br/> {person.label} from this list:{" "}
             </label>
             <br />
             <input
