@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { getAll } from '../api/nodes'
 import { connect } from 'react-redux'
 import { getAllNodes } from '../actions/nodes'
+import { openModal } from './Modal/Modal'
 
 function Cytoscape (props) {
   const layout = { name: 'random' }
