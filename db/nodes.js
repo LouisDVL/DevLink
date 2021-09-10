@@ -3,7 +3,12 @@ const connection = require('./connections')
 
 module.exports = {
   getNodes,
+<<<<<<< HEAD
   addInterestNode
+=======
+  addInterestNode,
+  deleteAnInterest
+>>>>>>> 9d640a931e4998e3d7398ce6c5df7ae6406f43c7
 }
 
 function getNodes (db = connection) {
@@ -25,4 +30,13 @@ function addInterestNode (interestLabel, db = connection) {
         return rows[0].id
       }
     })
+<<<<<<< HEAD
+=======
+}
+
+function deleteAnInterest (nodeId, db = connection) {
+  return db('nodes')
+    .where({ id: nodeId })
+    .del()
+>>>>>>> 9d640a931e4998e3d7398ce6c5df7ae6406f43c7
 }
