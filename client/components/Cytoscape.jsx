@@ -89,7 +89,7 @@ function Cytoscape (props) {
         borderWidth: '3px',
         borderColor: '#FF6700',
         backgroundColor: 'green',
-        backgroundImage: 'https://avatars.githubusercontent.com/u/86027651?v=4',
+        backgroundImage: 'https://avatars.githubusercontent.com/u/68931039?v=4',
         backgroundFit: 'cover'
       }
     },

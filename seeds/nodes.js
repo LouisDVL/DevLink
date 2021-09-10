@@ -28,19 +28,19 @@ exports.seed = function (knex) {
         { id: 21, label: 'Sophia', img: 'https://avatars.githubusercontent.com/u/85972272?v=4' },
         { id: 22, label: 'Tadhg', img: 'https://avatars.githubusercontent.com/u/83738717?v=4' },
         { id: 23, label: 'Zahira', img: 'https://avatars.githubusercontent.com/u/86027651?v=4' },
-        { id: 24, label: 'Fishing' },
-        { id: 25, label: 'Swimming' },
-        { id: 26, label: 'Gigs' },
-        { id: 27, label: 'Cheese' },
-        { id: 28, label: 'Sports' },
-        { id: 29, label: 'Anime' },
-        { id: 30, label: 'Figma' },
-        { id: 31, label: 'Wine' },
-        { id: 32, label: 'Video Games' },
-        { id: 33, label: 'Music' },
-        { id: 34, label: 'Boxing' },
-        { id: 35, label: 'Vegan' },
-        { id: 36, label: 'Coding' }
+        { id: 24, label: 'Coding' }
+        // { id: 25, label: 'Swimming' },
+        // { id: 26, label: 'Gigs' },
+        // { id: 27, label: 'Cheese' },
+        // { id: 28, label: 'Sports' },
+        // { id: 29, label: 'Anime' },
+        // { id: 30, label: 'Figma' },
+        // { id: 31, label: 'Wine' },
+        // { id: 32, label: 'Video Games' },
+        // { id: 33, label: 'Music' },
+        // { id: 34, label: 'Boxing' },
+        // { id: 35, label: 'Vegan' },
+        // { id: 36, label: 'Coding' }
       ])
     })
 }
