@@ -1,31 +1,45 @@
-import { getAll, postInterest } from "../api/nodes";
-import { waitingPending, waitingFinished } from "./waiting";
-import { getAllNodesSuccess } from "./nodesActions";
+import { getAll, postInterest, deleteInterest } from '../api/nodes'
+import { waitingPending, waitingFinished } from './waiting'
+import { getAllNodesSuccess } from './nodesActions'
 
-export function getAllNodes() {
+export function getAllNodes () {
   return (dispatch) => {
-    dispatch(waitingPending());
+    dispatch(waitingPending())
     getAll()
       .then((data) => {
-        dispatch(getAllNodesSuccess(data));
-        dispatch(waitingFinished());
+        dispatch(getAllNodesSuccess(data))
+        dispatch(waitingFinished())
       })
       .catch((err) => {
-        dispatch(waitingFinished());
-      });
-  };
+        dispatch(waitingFinished())
+      })
+  }
 }
 
-export function sendInterestNode(nodeId, interestLabel, history) {
+export function sendInterestNode (nodeId, interestLabel, history) {
   return (dispatch) => {
-    dispatch(waitingPending());
+    dispatch(waitingPending())
     postInterest(nodeId, interestLabel)
       .then(() => {
-        dispatch(waitingFinished());
-        history.push("/");
+        dispatch(waitingFinished())
+        history.push('/')
       })
       .catch((err) => {
-        dispatch(waitingFinished());
-      });
-  };
+        dispatch(waitingFinished())
+      })
+  }
+}
+
+export function removeInterestNode (nodeId, history) {
+  return (dispatch) => {
+    dispatch(waitingPending())
+    deleteInterest(nodeId)
+      .then(() => {
+        dispatch(waitingFinished())
+        history.push('/')
+      })
+      .catch((err) => {
+        dispatch(waitingFinished())
+      })
+  }
 }
