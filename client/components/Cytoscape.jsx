@@ -1,9 +1,18 @@
 import CytoscapeComponent from 'react-cytoscapejs'
 import React, { useEffect } from 'react'
-import { getAll } from '../api/nodes'
+// import { getAll } from '../api/nodes'
 import { connect } from 'react-redux'
 import { getAllNodes } from '../actions/nodes'
 import { useHistory } from 'react-router-dom'
+
+import cytoscape from 'cytoscape'
+import coseBilkent from 'cytoscape-cose-bilkent'
+
+cytoscape.use(coseBilkent)
+
+require(['cytoscape', 'cytoscape-cose-bilkent'], function (cytoscape, coseBilkent) {
+  coseBilkent(cytoscape) // register extension
+})
 
 function Cytoscape (props) {
   const layout = { name: 'random' }
