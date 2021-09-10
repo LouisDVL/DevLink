@@ -20,3 +20,10 @@ export function getAll () {
       return nodeList
     })
 }
+
+export function postInterest (nodeId, interestLabel) {
+  return request.post('http://localhost:3000/api/v1/index/newInterest').send({
+    nodeId,
+    interestLabel
+  })
+}

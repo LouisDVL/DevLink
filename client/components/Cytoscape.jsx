@@ -3,11 +3,12 @@ import React, { useEffect } from 'react'
 import { getAll } from '../api/nodes'
 import { connect } from 'react-redux'
 import { getAllNodes } from '../actions/nodes'
-import { openModal } from './Modal/Modal'
+import { useHistory } from 'react-router-dom'
 
 function Cytoscape (props) {
   const layout = { name: 'random' }
   const { nodes, dispatch, waiting } = props
+  const history = useHistory()
 
   useEffect(() => {
     dispatch(getAllNodes())
@@ -49,6 +50,7 @@ function Cytoscape (props) {
             cy={(cy) => {
               cy.on('click', 'node', (event) => {
                 console.log(event.target._private.data.id)
+                history.push(`/addInterest/${event.target._private.data.id}`)
               })
             }}
           />
