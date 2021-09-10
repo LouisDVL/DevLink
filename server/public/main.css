@@ -16,9 +16,19 @@ button {
 
 .submitButton {
   margin-top: 1rem;
-  border-radius: 1rem;
+  border-radius: 8px;
   width: 100%;
   font-family: "Urbanist", sans-serif;
+  border: none;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submitButton:hover {
+  background-color: #FF6700;
+  color: white;
+  font-weight: normal;
 }
 
 .container {
@@ -28,18 +38,28 @@ button {
 }
 
 .content {
-  margin-top: 2rem;
+  margin-top: 12rem;
   padding: 1rem;
-  border: 1px solid black;
   border-radius: 15px;
+  background-color: #EBEBEB;
+  padding: 30px;
 }
 
 input {
+  display: flex;
   width: 100%;
   margin-top: 2rem;
   border: none;
-  border-bottom: 1px solid black;
   font-family: "Urbanist", sans-serif;
+  line-height: 40px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.label {
+  color: #FF6700;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .spinner {
