@@ -1,20 +1,20 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-function AddInterest(props) {
-  const { nodeId } = useParams();
-  const { nodes } = props;
-  function setInterestOptions() {
-    let interestOptions = nodes.filter(
-      (elem) => elem.img === null && typeof elem.id == "number"
-    );
+function AddInterest (props) {
+  const { nodeId } = useParams()
+  const { nodes } = props
+  function setInterestOptions () {
+    const interestOptions = nodes.filter(
+      (elem) => elem.img === null && typeof elem.id === 'number'
+    )
     return interestOptions.map((opt) => {
-      return <option value={opt.label} />;
-    });
+      return <option value={opt.label} />
+    })
   }
 
-  let options = setInterestOptions();
+  const options = setInterestOptions()
   return (
     <div className="container">
       <div className="content">
@@ -24,13 +24,13 @@ function AddInterest(props) {
         <datalist id="interests">{options}</datalist>
       </div>
     </div>
-  );
+  )
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
-    nodes: state.nodes,
-  };
+    nodes: state.nodes
+  }
 }
 
-export default connect(mapStateToProps)(AddInterest);
+export default connect(mapStateToProps)(AddInterest)

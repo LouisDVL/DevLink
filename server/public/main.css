@@ -32,7 +32,7 @@ input {
 .spinner {
   width: 40px;
   height: 40px;
-  background-color: rgb(189, 36, 36);
+  background-color: rgb(29, 29, 29);
 
   margin: 100px auto;
   -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
